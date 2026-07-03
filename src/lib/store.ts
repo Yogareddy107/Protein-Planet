@@ -169,7 +169,34 @@ export function useCategories() {
         .select("*")
         .order("sort_order", { ascending: true });
       if (error) throw error;
-      return (data as CategoryRow[]).map((c) => ({
+      
+      const list = [...(data as CategoryRow[])];
+      
+      if (!list.some((c) => c.slug === "oats")) {
+        list.push({
+          id: "oats-fallback-id",
+          slug: "oats",
+          name: "Oats",
+          icon: "🌾",
+          image_url: null,
+          sort_order: 9,
+        });
+      }
+      
+      if (!list.some((c) => c.slug === "peanut-butter")) {
+        list.push({
+          id: "pb-fallback-id",
+          slug: "peanut-butter",
+          name: "Peanut Butter",
+          icon: "🥜",
+          image_url: null,
+          sort_order: 10,
+        });
+      }
+      
+      list.sort((a, b) => a.sort_order - b.sort_order);
+
+      return list.map((c) => ({
         ...c,
         icon: c.icon || CATEGORY_ICONS[c.slug] || "🏋️",
       }));
