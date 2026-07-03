@@ -35,6 +35,8 @@ const FALLBACK_IMAGES: Record<string, string> = {
   "fat-burner": preworkout,
   multivitamins: creatine,
   accessories: whey,
+  oats: gainer,
+  "peanut-butter": gainer,
 };
 
 export function fallbackImageFor(categorySlug?: string | null): string {
@@ -52,6 +54,8 @@ export const CATEGORY_ICONS: Record<string, string> = {
   "fat-burner": "🔥",
   multivitamins: "💊",
   accessories: "🎽",
+  oats: "🌾",
+  "peanut-butter": "🥜",
 };
 
 // Brand + admin config

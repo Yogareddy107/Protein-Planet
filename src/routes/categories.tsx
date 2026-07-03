@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { useCategories, useProducts } from "@/lib/store";
 import { motion } from "framer-motion";
-import { Dumbbell, Zap, FlaskConical, Droplets, Flame, Pill, ShoppingBag, Milk } from "lucide-react";
+import { Dumbbell, Zap, FlaskConical, Droplets, Flame, Pill, ShoppingBag, Milk, Wheat, Cookie } from "lucide-react";
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   "🥛": Milk,
@@ -13,6 +13,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   "🔥": Flame,
   "💊": Pill,
   "🎒": ShoppingBag,
+  "🌾": Wheat,
+  "🥜": Cookie,
 };
 
 export const Route = createFileRoute("/categories")({

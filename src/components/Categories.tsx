@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useCategories } from "@/lib/store";
-import { Dumbbell, Zap, FlaskConical, Droplets, Flame, Pill, ShoppingBag, Milk } from "lucide-react";
+import { Dumbbell, Zap, FlaskConical, Droplets, Flame, Pill, ShoppingBag, Milk, Wheat, Cookie } from "lucide-react";
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   "🥛": Milk,
@@ -12,6 +12,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   "🔥": Flame,
   "💊": Pill,
   "🎒": ShoppingBag,
+  "🌾": Wheat,
+  "🥜": Cookie,
 };
 
 export function Categories() {
